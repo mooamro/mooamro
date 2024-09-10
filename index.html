@@ -1,1 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Write Something</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Share Your Thoughts</h1>
+        <textarea id="userInput" rows="6" placeholder="Write something here..."></textarea>
+        <button onclick="submitText()">Submit</button>
+        <div id="output"></div>
+    </div>
+    <script>
+        function submitText() {
+            var input = document.getElementById('userInput').value;
+            if(input.trim() !== "") {
+                document.getElementById('output').innerText = "You wrote: " + input;
+            } else {
+                document.getElementById('output').innerText = "Please write something!";
+            }
+        }
+    </script>
+</body>
+</html>
 
