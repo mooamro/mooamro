@@ -17,8 +17,13 @@
     <script>
         function submitText() {
             var input = document.getElementById('userInput').value;
-            if(input.trim() !== "") {
-                document.getElementById('output').innerText = "You wrote: " + input;
+            if (input.trim() !== "") {
+                var phoneNumber = "4917622786628"; // Replace with your WhatsApp number (use international format without "+" or leading "0")
+                var message = encodeURIComponent(input); // URL-encode the message text
+                var whatsappURL = "https://wa.me/" + phoneNumber + "?text=" + message;
+
+                // Open WhatsApp URL in a new tab
+                window.open(whatsappURL, "_blank");
             } else {
                 document.getElementById('output').innerText = "Please write something!";
             }
@@ -26,4 +31,3 @@
     </script>
 </body>
 </html>
-
